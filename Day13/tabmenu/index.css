@@ -1,0 +1,33 @@
+.menu-tab {
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef;
+}
+
+.tab {
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: transparent;
+}
+
+.tab:hover {
+  background-color: #f4f4f5;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
