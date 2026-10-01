@@ -43,7 +43,8 @@ const c = (x) => {
     }, 2000);
   });
 };
-c("비둘기").then((x) => alert(`${x} 훨훨`));
+
+c("코끼리").then((x) => alert(x));
 
 /* const content = document.querySelector("#content");
 const button = document.querySelector("#button");
