@@ -6,7 +6,8 @@
 const makeDough = (dough) => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`${dough} 도우 만들기`);
+      console.log(`${dough} 도우 만들기`);
+      success(true);
     }, 3000);
   });
 };
@@ -14,7 +15,8 @@ const makeDough = (dough) => {
 const makeSource = (source) => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`${source} 소스 뿌리기`);
+      console.log(`${source} 소스 뿌리기`);
+      success(true);
     }, 2000);
   });
 };
@@ -22,7 +24,8 @@ const makeSource = (source) => {
 const addTopping = (topping) => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`${topping} 토핑 뿌리기`);
+      console.log(`${topping} 토핑 뿌리기`);
+      success(true);
     }, 2000);
   });
 };
@@ -30,7 +33,8 @@ const addTopping = (topping) => {
 const addCheese = (cheese) => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`${cheese} 치즈 뿌리기`);
+      console.log(`${cheese} 치즈 뿌리기`);
+      success(true);
     }, 1000);
   });
 };
@@ -38,7 +42,8 @@ const addCheese = (cheese) => {
 const bakePizza = () => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`피자 굽기`);
+      console.log(`피자 굽기`);
+      success(true);
     }, 3000);
   });
 };
@@ -46,30 +51,15 @@ const bakePizza = () => {
 const makePizza = () => {
   return new Promise((success, fail) => {
     setTimeout(() => {
-      success(`피자 완성`);
+      console.log(`피자 완성`);
+      success(true);
     }, 2000);
   });
 };
 
 makeDough("씬")
-  .then((x) => {
-    console.log(x);
-    return makeSource("토마토");
-  })
-  .then((x) => {
-    console.log(x);
-    return addTopping("새우");
-  })
-  .then((x) => {
-    console.log(x);
-    return addCheese("파마산");
-  })
-  .then((x) => {
-    console.log(x);
-    return bakePizza();
-  })
-  .then((x) => {
-    console.log(x);
-    return makePizza();
-  })
-  .then((x) => console.log(x));
+  .then((x) => makeSource("토마토"))
+  .then((x) => addTopping("새우"))
+  .then((x) => addCheese("파마산"))
+  .then((x) => bakePizza())
+  .then((x) => makePizza());
