@@ -4,11 +4,13 @@ const remove = document.querySelector("#remove");
 const todolist = document.querySelector("#todolist");
 
 const newData = localStorage.getItem("todos");
-newData.split(",").forEach((v) => {
-  const li = document.createElement("li");
-  li.innerHTML = v;
-  todolist.append(li);
-});
+if (newData != null) {
+  newData.split(",").forEach((v) => {
+    const li = document.createElement("li");
+    li.innerHTML = v;
+    todolist.append(li);
+  });
+}
 
 add.addEventListener("click", () => {
   const { value } = input;
@@ -37,6 +39,6 @@ add.addEventListener("click", () => {
 });
 
 remove.addEventListener("click", () => {
-  localStorage.setItem("todos", []);
+  localStorage.removeItem("todos");
   todolist.innerHTML = "";
 });
